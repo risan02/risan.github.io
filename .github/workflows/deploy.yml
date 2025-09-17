@@ -19,11 +19,16 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
-      - name: Clean pnpm cache  # 新增：清理缓存，解决依赖安装问题
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2  # 新增：安装 pnpm
+        with:
+          version: latest  # 使用最新版本的 pnpm
+
+      - name: Clean pnpm cache
         run: pnpm cache clean
 
       - name: Install dependencies
-        run: pnpm install --force  # 新增 --force 强制安装
+        run: pnpm install --force
 
       - name: Build Valaxy project
         run: pnpm build
