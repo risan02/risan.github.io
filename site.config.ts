@@ -1,7 +1,7 @@
 import { defineSiteConfig } from 'valaxy'
 
 export default defineSiteConfig({
-  url: 'httpd://risann.cn',  //你网站的URL
+  url: 'https://risann.cn',  //你网站的URL
   favicon: "",	// 网页图标链接
   lang: 'zh-CN',  //默认语言
   title: "Risan's Blog | Risan的小站",  //网站标题
