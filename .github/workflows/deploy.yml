@@ -13,16 +13,18 @@ jobs:
         with:
           fetch-depth: 0
 
+      # 第一步：先安装 pnpm（关键调整）
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      # 第二步：配置 Node.js（此时 pnpm 已安装，可正常使用）
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'pnpm'
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2  # 新增：安装 pnpm
-        with:
-          version: latest  # 使用最新版本的 pnpm
+          cache: 'pnpm'  # 现在可以安全地使用 pnpm 缓存了
 
       - name: Clean pnpm cache
         run: pnpm cache clean
