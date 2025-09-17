@@ -17,6 +17,20 @@ const safelist = [
 export default defineValaxyConfig<UserThemeConfig>({
   // site config see site.config.ts
 
+  vite: {
+    base: '/risan.github.io/', // 基础路径配置
+    // 解决编码问题：指定服务器响应头
+    server: {
+      headers: {
+        'Content-Type': 'text/html; charset=utf-8',
+      },
+    },
+    // 构建配置
+    build: {
+      chunkSizeWarningLimit: 1000,
+    },
+  },
+
   theme: 'yun',
 
   themeConfig: {
