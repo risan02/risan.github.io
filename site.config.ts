@@ -8,7 +8,7 @@ export default defineSiteConfig({
   subtitle: 'Be water my friend',//网站副标题
   author: {
     name: 'Risan',//博主名称
-    avatar: "/images/avatar01.jpg",	//头像链接
+    avatar: "/images/avatar.jpg",	//头像链接
     status: {
       emoji: '🤔'	,// 头像旁边的emoji
       message: 'emmmm'
