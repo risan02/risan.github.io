@@ -1,0 +1,34 @@
+name: Deploy Valaxy Blog to GitHub Pages
+
+on:
+  # 当推送到 main 分支时触发部署
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18  # Valaxy 推荐 Node.js ≥ 16.14，18 更稳定
+          cache: 'pnpm'     # 缓存 pnpm 依赖，加速构建
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build Valaxy project
+        run: pnpm build  # 生成 dist 文件夹
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # 自动生成的令牌，无需手动配置
+          publish_dir: ./dist  # 部署 dist 文件夹内容
+          publish_branch: gh-pages  # 部署到 gh-pages 分支
