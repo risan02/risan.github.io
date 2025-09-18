@@ -1,0 +1,26 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Risan's Blog | Risan的小站",
+    "home_page_url": "https://risann.cn/",
+    "feed_url": "https://risann.cn/feed.json",
+    "description": "Risan's blog",
+    "icon": "https://risan02.github.io/risan.github.io/avatar.jpg",
+    "author": {
+        "name": "Risan",
+        "url": "https://valaxy.site"
+    },
+    "items": [
+        {
+            "id": "https://risann.cn/posts/hello-valaxy",
+            "content_html": "<h2>Valaxy</h2>\n<p>Next Generation Static Blog Framework.</p>\n<p>Write your first post!</p>\n<h2>Usage</h2>\n<p>Modify `valaxy</p>\n<br/><p>访问 <a href=\"https://risann.cn/posts/hello-valaxy\" target=\"_blank\">https://risann.cn/posts/hello-valaxy</a> 阅读全文。</p>",
+            "url": "https://risann.cn/posts/hello-valaxy",
+            "title": "Hello, Valaxy!",
+            "date_modified": "2022-04-01T00:00:00.000Z",
+            "date_published": "2022-04-01T00:00:00.000Z",
+            "author": {
+                "name": "Risan",
+                "url": "https://valaxy.site"
+            }
+        }
+    ]
+}
